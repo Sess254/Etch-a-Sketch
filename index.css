@@ -1,0 +1,28 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.board {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 1px solid black;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    padding: 10px;
+}
