@@ -1,8 +1,10 @@
-let color = "black"
+let color = ""
+let click = true
 
 const black = document.getElementById('black')
 const erasor = document.getElementById('erasor')
-const random = documnt.getElementById('random')
+const random = document.getElementById('random')
+const reset = document.getElementById('reset')
 
 
 black.addEventListener('click', () =>{
@@ -18,7 +20,7 @@ random.addEventListener('click', () =>{
     changeColor('random')
 })
 
-
+reset.addEventListener('click', resetBoard)
 
 
 
@@ -48,18 +50,38 @@ function changeSize(input){
 }
 
 function colorSquares() {
-    if ((color === 'random')){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-    } else {
-        this.style.backgroundColor = color
+    if (click){
+        if (color === 'random'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        } else {
+            this.style.backgroundColor = color
+        }
+
     }
+
    
 }
 
 function changeColor(choice) {
     color = choice
-
 }
 
+function resetBoard() {
+    const board = document.querySelector(".board")
+    let squares = board.querySelectorAll("div")
+    squares.forEach((div) => div.style.backgroundColor = 'white')
+}
+
+document.querySelector('body').addEventListener('click', (e) =>{
+    if (e.target.tagName != 'BUTTON'){
+        click = !click
+        if (click){
+            document.querySelector('.mode').textContent = `Mode: coloring`
+        } else{
+            document.querySelector('.mode').textContent = 'Mode: Not coloring'
+        }
+    }
+
+})
 
 

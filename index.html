@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch a sketch</title>
+    <title>Etch a sketch</title>\
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
         <div class="content">
             <div class="buttons">
-                <button id="black">Black</button>
-                <button id="erasor">Erasor</button>
-                <button id="random">Random</button>
-                <button id="Reset">Reset</button>
+                <button id="black" class="black">Black</button>
+                <button id="erasor" class="erasor">Erasor</button>
+                <button id="random" class="random">Random</button>
+                <button id="reset" class="reset">Reset</button>
             </div>
             <div class="input">
                 <label for="input"><button>Size</button></label>
-                <input id="input" type="text" placeholder="Enter Size of grid" onchange="changeSize(this.value)" >
+                <input id="input" type="text" placeholder="Enter Size of grid" onchange="changeSize(this.value)">
             </div>
             <div class="board">
             </div>
+            <p class="mode">Mode: coloring</p>
         </div>
 
     </div>
